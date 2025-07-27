@@ -25,7 +25,7 @@ The CSV files used in this project are as follows:
 
 The data suggests that chicken rice stalls in Singapore with an online presence are overwhelmingly located in areas that have new flat development and renovation projects. These also happen to be areas that the younger generation of hawkers, or "hawkerpreneurs" as they are locally called, tend to operate in. 
 
-The story webpage is here: https://tianwen-tay.github.io/](https://tianwen-tay.github.io/tianwen-tay-project2/)
+The story webpage is here: [https://tianwen-tay.github.io/tianwen-tay-project2/](https://tianwen-tay.github.io/tianwen-tay-project2/)
 
 ## Skills learnt 
 
