@@ -1,15 +1,19 @@
+# Re-import necessary library due to environment reset
+article_output_path = "/mnt/data/hawker_digitization_story.html"
+
+# Regenerate the article HTML as defined earlier
+final_html_with_article = """
 <!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Story template</title>
+    <title>Singaporean hawkers are digitizing, but not everyone is keeping pace.</title>
 
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap"
         rel="stylesheet">
     <style>
@@ -95,7 +99,6 @@
             background: #fff880;
         }
 
-        /* margin on mobile */
         @media (max-width: 640px) {
             body {
                 font-size: 18px;
@@ -107,92 +110,42 @@
             }
         }
     </style>
-    <style>
-        .with-image-bg,
-        .with-video-bg {
-            position: relative;
-            background-size: cover;
-            margin-bottom: 2em;
-
-            /* Center everything inside */
-            min-height: 70svh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            /* White text with a shadow */
-            color: white;
-            text-shadow: 0px 0px 30px black,
-                0px 0px 10px rgba(0, 0, 0, 0.5);
-        }
-
-        .with-image-bg {
-            background-image: url('bg-image.jpg');
-        }
-
-        .video-background {
-            position: absolute;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
-
-        .video-background video {
-            object-fit: cover;
-            width: 100%;
-            height: 100%;
-        }
-    </style>
 </head>
 
 <body>
-    <div class="header with-image-bg">
+    <div class="header with-image-bg" style="background-image: url('bg-image.jpg'); background-size: cover; min-height: 70vh; display: flex; align-items: center; justify-content: center; color: white; text-shadow: 0px 0px 30px black;">
         <div class="content">
-            <h1>This is the headline of the story you are about to read</h1>
-            <p class="subhead">Unlike the "basic" template, the header text is INSIDE of a .content class so it doesn't
-                get too
-                wide</p>
+            <h1>Singaporean hawkers are digitizing, but not everyone is keeping pace.</h1>
+            <p class="subhead">Newer entrants are making an impression online, but a whole generation appears to be left behind.</p>
         </div>
     </div>
     <div class="content">
-        <div class="byline">
-            <p>By <a href="https://jonathansoma.com">Jonathan Soma</a></p>
-        </div>
-        <p>We had to create another <code>class="content"</code> before the byline/after the header so everything would
-            line up okay.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-            commodo consequat.</p>
-    </div>
-
-    <div class="header with-video-bg">
-        <div class="video-background">
-            <video src="bg-video.mp4" preload="auto" tabindex="0" playsinline autoplay loop muted></video>
-        </div>
-        <div class="content">
-            <h1>Here is a header with a video background</h1>
-            <p class="subhead">Unlike the "basic" template, the header text is INSIDE of a .content class so it doesn't
-                get too
-                wide</p>
-        </div>
-    </div>
-    <div class="content">
-        <div class="byline">
-            <p>By <a href="https://jonathansoma.com">Jonathan Soma</a></p>
-        </div>
-        <p>We had to create another <code>class="content"</code> before the byline/after the header so everything would
-            line up okay.</p>
-        <p>You can use this for things other than headers if you want, too.</p>
+        <p>In Singapore, the ongoing push to digitize the country's hawker stalls has not borne fruit. Largely helmed by older Singaporeans who are less tech-savvy, government and private sector-led initiatives that encourage the adoption of digital tools are often rejected by insiders as eating into the industry's slim profit margins.</p>
+        <p>Case in point: while community ambassadors have onboarded several hawker centres onto local food delivery platforms like Grab and Foodpanda, these platforms often charge exorbitant commission fees of <a href="https://www.grab.com/sg/merchant/">up to 30%</a>.</p>
+        <iframe width="100%" height="400" src="https://www.youtube.com/embed/TV4NuG-WAMw" title="Hawker video" frameborder="0" allowfullscreen></iframe>
+        <p>At the same time, the Singapore government is also actively fostering a new generation of hawkers. Termed "hawkerpreneurs", these hawkers, who tend to be significantly younger, tend to sell dishes that are uncommon for hawker centres or adopt practices that are <a href="https://www.eater.com/22393343/singapore-hawker-centers-young-hawkerpreneurs-gourmet-street-food">at odds with</a> the old guard. In addition, they also receive generous equipment grants and rental subsidies from the government.</p>
+        <p>Often, these hawkerpreneurs only move into stalls that have been allocated to them by Singapore's National Environment Agency - bidding for one on the open market is prohibitively expensive, particularly for privately run "coffeeshops" and food courts. Vacancies are rare in established hawker centres, and insider interviews suggest that the majority of them eventually settle in newly built hawker centres which are found in estates that see new flat development and renovation projects.</p>
+        <p>To investigate this trend, I dove into Singapore's hawker scene. Using Hainanese chicken rice listings on Google Maps, my analysis found patterns that suggest that hawker digitization may be siloed in particular clusters across Singapore.</p>
+        <p>First, I used a free Google Maps scraper to extract a list of chicken rice stall listings. Then, I created a list of planning areas that have seen new flat developments in the last decade. I then used the list to filter the full dataset and determine the number of chicken rice listings located in these planning areas versus the others.</p>
+        <iframe title="Planning areas with new flat developments have more than three times as many chicken rice stall listings." aria-label="Bar Chart" id="datawrapper-chart-rcXzn" src="https://datawrapper.dwcdn.net/rcXzn/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="154" data-external="1"></iframe>
+        <p>The chart above shows that planning areas with new flat developments have more than three times as many chicken rice stall listings. While the dataset may not be adequately representative of Singapore's chicken rice landscape, this jarring observation suggests that there may well be an intergenerational digitization divide among Singapore's hawkers.</p>
+        <p>To investigate this trend further, I then mapped out concentrations of chicken rice stall listings by planning area.</p>
+        <iframe title="Distribution of chicken rice stalls with an online presence in Singapore (2025)" aria-label="map" id="datawrapper-chart-TVwjo" src="https://datawrapper.dwcdn.net/TVwjo/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="580" data-external="1"></iframe>
+        <p>From the map above, it is clear that the majority of listings are found in planning areas where flat development or estate renovation has happened or is ongoing. As mentioned earlier, hawkers who operate in these areas tend to be younger, more digitally-savvy "hawkerpreneurs".</p>
     </div>
     <div class="footer">
         <div class="content">
-            <p>You can find the code for this template <a href="https://github.com/jsoma/page-templates/">here</a>.
-                Delete these lines
-                when you use it, and don't forget to change the <code>title</code> tag!!!</p>
+            <p>You can find the code for this template <a href="https://github.com/jsoma/page-templates/">here</a>. Delete these lines when you use it, and don't forget to change the <code>title</code> tag!!!</p>
         </div>
     </div>
 
 </body>
 
 </html>
+"""
+
+# Save the final HTML file
+with open(article_output_path, "w", encoding="utf-8") as f:
+    f.write(final_html_with_article)
+
+article_output_path
